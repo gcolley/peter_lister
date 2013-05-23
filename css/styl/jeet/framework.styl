@@ -1,0 +1,130 @@
+@import 'nib'
+
+/*  Syntax quick reference
+ *  ----------------------
+ *  gutter[gut, g] = 1[float between 0 and 1]
+ *  center(max_width = 1410px)
+ *  column[col](numerator = 1, denominator = 1, number_of_nested_columns = 0)
+ *  span(numerator = 1, denominator = 1)
+ *  offset[off](numerator = 0, denominator = 0, col_or_span = column[col, c, span, s], left_or_right = left[right])
+ *  get(numerator = 1, denominator = 1, col_or_span = column[col, c, span, s])
+ *  bp(w = 705px, mobile_first = false[mf])
+ *  endbp()
+ *  stack(align = center[c, left, l, right, r])
+ *  cf() - clearfix
+ */
+
+gutter = 1
+
+center(max_width = 1410px)
+    cf()
+    max-width max_width
+    float none !important
+    display block
+    margin-right auto !important
+    margin-left auto !important
+    *margin-right auto !important
+    *margin-left auto !important
+
+column(numerator = 1, denominator = 1, number_of_nested_columns = 0)
+    cf()
+    float left
+    if (number_of_nested_columns != 0)
+        width ( (100 - (g*2) * g * (number_of_nested_columns - 1)) / number_of_nested_columns )% // Thanks flebron from #math
+        margin-left (g)%
+        margin-right (g)%
+        &:first-child
+            float left
+            margin-left 0
+        &:last-child
+            overflow hidden
+            width auto
+            min-width ( (100 - (g*2) * g * (number_of_nested_columns - 1)) / number_of_nested_columns )% // Thanks Barney Carroll from StackOverflow
+            margin-right 0
+    else
+        width (((numerator/denominator)*100) - (g*2))%
+        margin-left (g)%
+        margin-right (g)%
+        &:first-child
+            float left
+
+span(numerator = 1, denominator = 1)
+    cf()
+    float left
+    width ((numerator/denominator)*100)%
+    margin-left 0
+    margin-right 0
+    &:last-child
+        overflow hidden
+        width auto
+        min-width ((numerator/denominator)*100)%
+    &:first-child
+        float left
+        overflow auto
+        width ((numerator/denominator)*100)%
+        min-width inherit
+
+offset(numerator = 0, denominator = 0, left_or_right = left, col_or_span = column)
+    if (col_or_span == column) or (col_or_span == col) or (col_or_span == c)
+        if (left_or_right == left) or (left_or_right == l)
+            margin-left (((numerator/denominator)*100) + (g))%
+        if (left_or_right == right) or (left_or_right == r)
+            margin-right (((numerator/denominator)*100) + (g))%
+    if (col_or_span == span) or (col_or_span == s)
+        if (left_or_right == left) or (left_or_right == l)
+            margin-left ((numerator/denominator)*100)%
+        if (left_or_right == right) or (left_or_right == r)
+            margin-right ((numerator/denominator)*100)%
+
+get(numerator = 1, denominator = 1, col_or_span = column)
+    if (col_or_span == span) or (col_or_span == s)
+        return ((numerator/denominator)*100)%
+    if (col_or_span == column) or (col_or_span == col) or (col_or_span == c)
+        return (((numerator/denominator)*100) - (g*2))%
+
+bp(w = 705px, mobile_first = false)
+    if (mobile_first == mf)
+        unquote("@media all and (min-width: " + w + ") {")
+    else
+        unquote("@media all and (max-width: " + w + ") {")
+endbp()
+    unquote("}")
+
+stack(align = center)
+    display block
+    width 100%
+    margin-left auto !important
+    margin-right auto !important
+    margin-bottom (g * 3)%
+    if (align == center) or (align == c)
+        text-align center
+    if (align == l) or (align == l)
+        text-align left
+    if (align == r) or (align == r)
+        text-align right
+
+// Function aliases
+g = gutter
+gut = gutter
+col = column
+off = offset
+cf = clearfix
+
+// Config junk
+*
+    box-sizing(border-box)
+    *behavior url(js/vendor/boxsizing.htc)
+edit()
+    body *
+        transition 200ms ease all
+        background rgba(#000, .15)
+html
+    overflow-y scroll
+    overflow-x hidden
+body
+    cf()
+    width 100%
+img, video, audio, embed, object, input, iframe
+    max-width 100%
+.placeholder
+    color #aaa

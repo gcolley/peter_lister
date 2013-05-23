@@ -1,0 +1,40 @@
+// Buttons
+button(bg_color = #dddddd, font_color = #ffffff, radius = 2px)
+    bs()
+    background: bg_color
+    background: linear-gradient(top, lighten(bg_color, 10%) 10%, darken(bg_color, 10%) 90%)
+    border: 1px solid darken(bg_color, 5%)
+    border-bottom: 1px solid darken(bg_color, 30%)
+    border-radius: radius
+    box-shadow: inset 0 1px 0 0 lighten(bg_color, 30%)
+    color: font_color
+    font: 12px/24px Arial,sans-serif !important
+    padding: 0 10px
+    text-align: center
+    text-shadow: 0 -1px 0 darken(bg_color, 30%)
+
+    &:hover
+        background: bg_color
+        background: linear-gradient(top, darken(bg_color, 5%) 10%, darken(bg_color, 15%) 90%)
+        box-shadow: inset 0 1px 0 0 lighten(bg_color, 10%)
+
+    &:active
+        box-shadow: inset 0 0 8px 4px darken(bg_color, 30%), 0 1px 0 0 #eeeeee
+
+// ChromeFrame for IE6, 7, 8 - Style this to suit your color scheme
+.chromeframe
+    width 100%
+    background #fff
+    background linear-gradient(top, #fff, #eee)
+    border-bottom 1px solid #ddd
+    box-shadow inset 0 -1px 0 #fff
+    text-shadow 0 1px 0 #fff
+    p
+        center()
+        padding 15px 0
+        margin-top 0
+        margin-bottom 0
+        text-align center
+        margin-bottom 0
+        a
+            color #3a95fb
