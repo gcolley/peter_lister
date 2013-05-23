@@ -45,6 +45,7 @@ nav ul li a:hover{color:#121212}
 #wrapper section ul{color:#444;font-family:'Open Sans',sans-serif;font-size:1.25em;font-weight:300;line-height:35px;list-style:none;padding-left:2px;}
 #wrapper section ul li{list-style-position:inside}
 #wrapper #services,#wrapper #thecar,#wrapper #about,#wrapper #contact{background-color:#f5f5f5}
+#wrapper #thecar h3,#wrapper #thecar h4{color:#fff;text-shadow:1px 2px 2px #000}
 form{margin-top:20px;}
 form label{color:#666;font-family:'Open Sans',sans-serif;font-weight:300;text-align:left}
 form input[type="text"],form input[type="password"],form textarea{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:2px;border-radius:2px;border:1px solid #bbb;font-family:'Open Sans',sans-serif;font-weight:300;margin-top:3px;padding:5px;width:100%}
@@ -64,8 +65,8 @@ div.error ul{margin:0;padding:0;}
 div.error ul li{color:#b94a48;font-size:14px;line-height:25px}
 div.success{background-color:#dff0d8;border:1px solid #d6e9c6;-webkit-border-radius:2px;border-radius:2px;color:#468847;margin-bottom:10px;}
 div.success p{font-size:14px;padding:0 10px}
-div.gallery{overflow:hidden;position:absolute;top:0;left:0;height:auto;width:100%;}
-div.gallery a.control{background-color:#fff;-webkit-border-radius:50%;border-radius:50%;font-family:'Consolas',monospace;font-size:3em;margin-top:-70px;opacity:.5;filter:alpha(opacity=50);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";padding:27px 0 28px;position:absolute;top:50%;vertical-align:middle;z-index:9999;}
+div.gallery{overflow:hidden;position:absolute;top:0;left:0;width:100%;}
+div.gallery a.control{background-color:#fff;-webkit-border-radius:50%;border-radius:50%;font-family:'Consolas',monospace;font-size:3em;margin-top:-110px;opacity:.5;filter:alpha(opacity=50);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";padding:27px 0 28px;position:absolute;top:40%;vertical-align:middle;z-index:9999;}
 div.gallery a.control:hover{cursor:pointer;opacity:1;-ms-filter:none;filter:none}
 div.gallery a.control.left{-webkit-box-shadow:10px 0 10px -10px #000;box-shadow:10px 0 10px -10px #000;padding-right:20px;padding-left:50px;left:-40px}
 div.gallery a.control.right{-webkit-box-shadow:-10px 0 10px -10px #000;box-shadow:-10px 0 10px -10px #000;padding-right:50px;padding-left:20px;right:-40px}
@@ -85,5 +86,22 @@ footer p:last-child{float:right}
 .button.purple:hover{background:#612f64;background:-webkit-gradient(linear, left top, left bottom, color-stop(0.1, #5c2d5f), color-stop(0.9, #522855));background:-webkit-linear-gradient(top, #5c2d5f 10%, #522855 90%);background:-moz-linear-gradient(top, #5c2d5f 10%, #522855 90%);background:-o-linear-gradient(top, #5c2d5f 10%, #522855 90%);background:-ms-linear-gradient(top, #5c2d5f 10%, #522855 90%);background:linear-gradient(top, #5c2d5f 10%, #522855 90%);-webkit-box-shadow:inset 0 1px 0 0 #793b7d;box-shadow:inset 0 1px 0 0 #793b7d}
 .button.purple:active{-webkit-box-shadow:inset 0 0 8px 4px #442146,0 1px 0 0 #eee;box-shadow:inset 0 0 8px 4px #442146,0 1px 0 0 #eee}
 .float-right{float:right}
+*.fade-in{-webkit-animation:fadein 1s;-moz-animation:fadein 1s;-o-animation:fadein 1s;-ms-animation:fadein 1s;animation:fadein 1s}
+*.fade-in.one{-webkit-animation:fadein 1s;-moz-animation:fadein 1s;-o-animation:fadein 1s;-ms-animation:fadein 1s;animation:fadein 1s}
+*.fade-in.two{-webkit-animation:fadein 2s;-moz-animation:fadein 2s;-o-animation:fadein 2s;-ms-animation:fadein 2s;animation:fadein 2s}
+*.fade-in.three{-webkit-animation:fadein 3s;-moz-animation:fadein 3s;-o-animation:fadein 3s;-ms-animation:fadein 3s;animation:fadein 3s}
+*.fade-in.four{-webkit-animation:fadein 4s;-moz-animation:fadein 4s;-o-animation:fadein 4s;-ms-animation:fadein 4s;animation:fadein 4s}
+*.fade-in.five{-webkit-animation:fadein 5s;-moz-animation:fadein 5s;-o-animation:fadein 5s;-ms-animation:fadein 5s;animation:fadein 5s}
 @media all and (max-width: 705px) {
+}
+@-moz-keyframes fadein{0%{opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@-webkit-keyframes fadein{0%{opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@-o-keyframes fadein{0%{opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@-ms-keyframes fadein{0%{opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@keyframes fadein{0%{opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+100%{opacity:1;-ms-filter:none;filter:none}
 }

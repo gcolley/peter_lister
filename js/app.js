@@ -54,9 +54,10 @@ $(document).ready(function(){
 	});
 
 	$('#gallery').cycle({
-		fx		: 'scrollHorz',
-		timeout : 0,
-		prev 	: '#previous',
-		next	: '#next'
+		fx				: 'scrollLeft,scrollDown,scrollRight,scrollUp',
+		randomizeEffects: false,
+		prev 			: '#previous',
+		next			: '#next',
+		easing  		: 'easeInBack'
 	});
 });
